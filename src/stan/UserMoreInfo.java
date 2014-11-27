@@ -26,6 +26,10 @@ public class UserMoreInfo
             this.sex = s;
             this.birth = new Date();
     }
+    public String GetMail()
+    {
+        return this.mail;
+    }
     //
     @Override
     public String toString()
