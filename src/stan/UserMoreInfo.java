@@ -7,24 +7,24 @@ public class UserMoreInfo
         extends UserInfo
 {
     String phone;
-    String sex;
+    short sex;// 0 - не указано // 1 - мужской // 2 - женский //
     Date birth;
-
+    
     public UserMoreInfo(String line, String line2) 
     {
         super(line);
         String[] insplits = line2.split("\t");
             this.phone = insplits[0];
-            this.sex = insplits[1];
+            this.sex = Short.parseShort(insplits[1]);
             this.birth = new Date();
     }
     public UserMoreInfo(String f, String n, String p, String m,
-                                                String ph,String s) 
+                                                String ph,short s,Date d) 
     {
         super(f,n,p,m);
             this.phone = ph;
             this.sex = s;
-            this.birth = new Date();
+            this.birth = d;
     }
     public String GetMail()
     {
